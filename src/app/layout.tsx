@@ -16,9 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={sans.className}>
-      <body className='flex flex-col w-full max-w-screen-2xl mx-auto'></body>
-      <Header></Header>
-      <body className=''>{children}</body>
+      <body className='flex flex-col w-full max-w-screen-2xl mx-auto'>
+        <Header></Header>
+        {children}
+      </body>
     </html>
   );
 }
