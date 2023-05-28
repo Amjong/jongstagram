@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsPlusSquare, BsSearch } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
+import LoginButton from './LoginButton';
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
         <AiOutlineHome></AiOutlineHome>
         <BsSearch></BsSearch>
         <BsPlusSquare></BsPlusSquare>
-        <button className='rounded-lg border-2 border-pink-300'>Sign in</button>
+        <LoginButton text={'Sign in'}></LoginButton>
       </div>
     </div>
   );
