@@ -1,14 +1,14 @@
 import type { NextApiRequest, NextApiResponse, NextApiHandler } from 'next';
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
-import { redirect } from 'next/dist/server/api-utils';
 
 const authHandler = (
   req: NextApiRequest,
   res: NextApiResponse
-): NextApiHandler => NextAuth(req, res, options);
+): NextApiHandler => NextAuth(req, res, AuthOptions);
 
-const options = {
+export const AuthOptions = {
+  secret: process.env.NEXTAUTH_SECERT,
   providers: [
     //구글 provider 정의
     GoogleProvider({
