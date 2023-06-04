@@ -3,6 +3,7 @@ import { BsPlusSquare, BsSearch } from 'react-icons/bs';
 import { AiOutlineHome } from 'react-icons/ai';
 import LoginButton from './LoginButton';
 import { getUserSession } from '../service/session';
+import Profile from './Profile';
 import Link from 'next/link';
 
 export default async function Header() {
@@ -17,6 +18,13 @@ export default async function Header() {
         <AiOutlineHome></AiOutlineHome>
         <BsSearch></BsSearch>
         <BsPlusSquare></BsPlusSquare>
+        {session && (
+          <Profile
+            imageSource={session?.user?.image as string}
+            width={50}
+            height={50}
+          ></Profile>
+        )}
         <LoginButton text={text} session={session}></LoginButton>
       </div>
     </div>

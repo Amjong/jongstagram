@@ -6,7 +6,7 @@ export default async function Home() {
   return (
     <main className='flex flex-col items-center'>
       <div className='mt-20'>
-        {session && <div>{`Signed! as ${session?.user?.email}`}</div>}
+        {session && <div>{`Signed! as ${JSON.stringify(session)}`}</div>}
         {!session && (
           <LoginButton
             text='Sign in with Google'
