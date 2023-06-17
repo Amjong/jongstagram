@@ -1,4 +1,6 @@
-export default {
+import { type SchemaTypeDefinition } from 'sanity';
+
+const post: SchemaTypeDefinition = {
   title: 'Post',
   name: 'post',
   type: 'document',
@@ -60,3 +62,5 @@ export default {
     },
   },
 };
+
+export default post;

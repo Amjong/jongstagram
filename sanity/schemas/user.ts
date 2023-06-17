@@ -1,4 +1,6 @@
-export default {
+import { type SchemaTypeDefinition } from 'sanity';
+
+const user: SchemaTypeDefinition = {
   title: 'User',
   name: 'user',
   type: 'document',
@@ -30,7 +32,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'user'}],
+          to: [{ type: 'user' }],
         },
       ],
       validation: (Rule) => Rule.unique(),
@@ -42,7 +44,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'user'}],
+          to: [{ type: 'user' }],
         },
       ],
       validation: (Rule) => Rule.unique(),
@@ -54,10 +56,12 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'post'}],
+          to: [{ type: 'post' }],
         },
       ],
       validation: (Rule) => Rule.unique(),
     },
   ],
-}
+};
+
+export default user;
