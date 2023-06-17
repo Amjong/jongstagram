@@ -15,9 +15,16 @@ export default async function Header() {
         <Link href='/'>Jongstagram</Link>
       </h1>
       <div className='flex space-x-4 text-2xl m-3 items-center'>
-        <AiOutlineHome></AiOutlineHome>
-        <BsSearch></BsSearch>
-        <BsPlusSquare></BsPlusSquare>
+        <Link href='/'>
+          <AiOutlineHome></AiOutlineHome>
+        </Link>
+        <Link href='/search'>
+          <BsSearch></BsSearch>
+        </Link>
+        <Link href='/new'>
+          <BsPlusSquare></BsPlusSquare>
+        </Link>
+
         {session && (
           <Profile
             imageSource={session?.user?.image as string}
