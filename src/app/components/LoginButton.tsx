@@ -15,11 +15,13 @@ export default function LoginButton({ text, session }: props) {
     signIn();
   };
   return (
-    <button
-      className='rounded-lg border-2 border-pink-300 text-2xl p-1'
-      onClick={() => signFunc()}
-    >
-      {text}
-    </button>
+    <div className='rounded-lg bg-gradient-to-bl from-fuchsia-600 via-rose-500 to-amber-300 p-[0.15rem]'>
+      <button
+        className='bg-white rounded-sm text-base p-[0.3rem] hover:opacity-90 transition-opacity'
+        onClick={() => signFunc()}
+      >
+        {text}
+      </button>
+    </div>
   );
 }
