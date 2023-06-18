@@ -1,3 +1,4 @@
+import { signIn } from 'next-auth/react';
 import type { NextApiRequest, NextApiResponse, NextApiHandler } from 'next';
 import NextAuth from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
@@ -16,6 +17,9 @@ export const AuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
+  pages: {
+    signIn: '/auth/signIn',
+  },
 };
 
 export { authHandler as GET, authHandler as POST };

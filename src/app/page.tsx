@@ -1,19 +1,19 @@
-import { isLabeledStatement } from 'typescript';
+'use client';
+import { useSession } from 'next-auth/react';
 import LoginButton from './components/LoginButton';
-import { getUserSession } from './service/session';
 import Post from './components/post';
-export default async function Home() {
-  const session = await getUserSession();
+export default function Home() {
+  const { data: session } = useSession();
   return (
     <main className='flex flex-col items-center'>
       <div className='mt-20'>
-        {session && <Post></Post>}
-        {!session && (
-          <LoginButton
-            text='Sign in with Google'
-            session={session}
-          ></LoginButton>
+        {session ? (
+          <Post></Post>
+        ) : (
+          <LoginButton text='Sign in with Google'></LoginButton>
         )}
+        {/* {session && <Post></Post>}
+        {!session && <LoginButton text='Sign in with Google'></LoginButton>} */}
       </div>
     </main>
   );
